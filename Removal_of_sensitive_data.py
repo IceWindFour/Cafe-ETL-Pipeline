@@ -12,7 +12,7 @@ def remove_sensitive_data(filename):
     df = df.drop(to_drop, axis=1)
     return df
 
-print(remove_sensitive_data('chesterfield_25-08-2021_09-00-00.csv'))
+remove_sensitive_data('chesterfield_25-08-2021_09-00-00.csv')
 
 
 
