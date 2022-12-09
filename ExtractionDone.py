@@ -14,7 +14,7 @@ import numpy as np
 
 
 #Checks working directory
-get_ipython().system('dir')
+# get_ipython().system('dir')
 
 
 # In[39]:
