@@ -47,6 +47,15 @@ FOREIGN KEY(product_id)
 REFERENCES orders_products_table(product_id));
 """)
 
+cur.execute("""CREATE TABLE IF NOT EXISTS test_table
+    (date_time TEXT,
+branch TEXT,
+item TEXT,
+price float,
+total_price float,
+payment_type TEXT);
+""")
+
 print("Table created successfully")
 
 conn.commit()
