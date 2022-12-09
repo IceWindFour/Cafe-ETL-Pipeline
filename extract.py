@@ -26,4 +26,3 @@ def turn_file_into_dataframe(file_path, col_names):
 df = turn_file_into_dataframe("reports_from_branches/chesterfield_25-08-2021_09-00-00.csv", col_names)
 
 print(df)
-
