@@ -1,9 +1,9 @@
 message = "hello world"
 
-def display():
-    return message
+def display(message, date):
+  return message
 
 
 
 
-print(display())
+print(display(message, "xd"))
