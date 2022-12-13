@@ -12,48 +12,29 @@ print("Opened datebase successfully")
 
 cur = conn.cursor()
 
-cur.execute("""CREATE TABLE IF NOT EXISTS order_table
-    (date_and_time TEXT PRIMARY KEY,
-branch_name TEXT,
-item TEXT,
-price FLOAT,
-total_price FLOAT,
-payment_type TEXT);
-""")
-
 cur.execute("""CREATE TABLE IF NOT EXISTS orders_details_table
     (order_id SERIAL PRIMARY KEY,
-branch_name TEXT,
+date_time TEXT,
+branch TEXT,
 total_price FLOAT,
-payment_type TEXT,
-date_and_time TEXT,
-FOREIGN KEY(date_and_time)
-REFERENCES order_table(date_and_time));
+payment_type TEXT)
 """)
 
 cur.execute("""CREATE TABLE IF NOT EXISTS orders_products_table
-    (order_id INT,
+    (order_id SERIAL,
 product_id SERIAL PRIMARY KEY,
-item_price FLOAT,
+item TEXT,
+price FLOAT,
 quantity INT,
 FOREIGN KEY(order_id)
 REFERENCES orders_details_table(order_id));
 """)
 
 cur.execute("""CREATE TABLE IF NOT EXISTS products_table
-    (product_id INT,
+    (product_id SERIAL,
 products_name TEXT,
 FOREIGN KEY(product_id)
 REFERENCES orders_products_table(product_id));
-""")
-
-cur.execute("""CREATE TABLE IF NOT EXISTS test_table
-    (date_time TEXT,
-branch TEXT,
-item TEXT,
-price float,
-total_price float,
-payment_type TEXT);
 """)
 
 print("Table created successfully")
