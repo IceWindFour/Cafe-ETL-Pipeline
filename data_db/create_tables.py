@@ -37,7 +37,7 @@ branch_id INT,
 product_id INT,
 total_price FLOAT,
 payment_type TEXT,
-date_and_time TIMESTAMP,
+date_time TIMESTAMP,
 FOREIGN KEY(branch_id) REFERENCES branchs(branch_id),
 FOREIGN KEY(product_id) REFERENCES products(product_id))
 """)
