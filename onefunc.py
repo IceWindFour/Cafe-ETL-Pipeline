@@ -54,6 +54,18 @@ col_orders_details_table = 'date_time,branch,total_price,payment_type'
 col_orders_products_table = 'item,price'
 col_products_table = 'products_name'
 
+
+def test_update(conn):
+    cur = conn.cursor()
+    cur.execute("""UPDATE products_table
+    SET product_id_fk = product_id
+    FROM orders_products_table
+    WHERE product_id_fk is null;
+    """)
+    conn.commit()
+    conn.close()
+
+
 def execute_values(conn, df, table, cols):
 
     tuples = [tuple(x) for x in df.to_numpy()]
@@ -80,3 +92,4 @@ execute_values(conn, order_details_df, 'orders_details_table', col_orders_detail
 execute_values(conn, order_products_df, 'orders_products_table', col_orders_products_table)
 execute_values(conn, products_table_df, 'products_table', col_products_table)
 
+test_update(conn)

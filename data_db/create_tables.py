@@ -31,9 +31,9 @@ REFERENCES orders_details_table(order_id));
 """)
 
 cur.execute("""CREATE TABLE IF NOT EXISTS products_table
-    (product_id SERIAL,
+    (product_id_fk INT,
 products_name TEXT,
-FOREIGN KEY(product_id)
+FOREIGN KEY(product_id_fk)
 REFERENCES orders_products_table(product_id));
 """)
 
