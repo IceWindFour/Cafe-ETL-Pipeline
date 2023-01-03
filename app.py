@@ -25,37 +25,37 @@ final_df = dropping_pip(cleaned_df)
 
 print(final_df)
 
-# conn = psycopg2.connect(
-#     database="postgres",
-#     user = "postgres",
-#     password = "pass",
-#     host = "127.0.0.1",
-#     port = "5432"
-# )
+# # conn = psycopg2.connect(
+# #     database="postgres",
+# #     user = "postgres",
+# #     password = "pass",
+# #     host = "127.0.0.1",
+# #     port = "5432"
+# # )
 
-def execute_values(conn, df, table):
+# def execute_values(conn, df, table):
 
-    tuples = [tuple(x) for x in df.to_numpy()]
+#     tuples = [tuple(x) for x in df.to_numpy()]
 
-    cols = ','.join(list(df.columns))
-    # SQL query to execute
-    query = "INSERT INTO %s(%s) VALUES %%s" % (table, cols)
-    cursor = conn.cursor()
-    try:
-        extras.execute_values(cursor, query, tuples)
-        conn.commit()
-    except (Exception, psycopg2.DatabaseError) as error:
-        print("Error: %s" % error)
-        conn.rollback()
-        cursor.close()
-        return 1
-    print("the dataframe is inserted")
-    cursor.close()
-
-
-conn = psycopg2.connect(database="postgres", user = "postgres", password = "pass", host = "localhost", port = "5432")
+#     cols = ','.join(list(df.columns))
+#     # SQL query to execute
+#     query = "INSERT INTO %s(%s) VALUES %%s" % (table, cols)
+#     cursor = conn.cursor()
+#     try:
+#         extras.execute_values(cursor, query, tuples)
+#         conn.commit()
+#     except (Exception, psycopg2.DatabaseError) as error:
+#         print("Error: %s" % error)
+#         conn.rollback()
+#         cursor.close()
+#         return 1
+#     print("the dataframe is inserted")
+#     cursor.close()
 
 
-# df = pd.read_csv('mockFileWithHeaders.csv')
+# conn = psycopg2.connect(database="postgres", user = "postgres", password = "pass", host = "localhost", port = "5432")
 
-execute_values(conn, final_df, 'test_table')
+
+# # df = pd.read_csv('mockFileWithHeaders.csv')
+
+# execute_values(conn, final_df, 'test_table')

@@ -20,17 +20,17 @@ def cleaning_and_arranging_df(df):
     df["order_content"] = df["order_content"].str.rsplit('-', 1)
 
     #putting the two list items into two newly created columns
-    df[['item','price']] = pd.DataFrame(df.order_content.tolist(), index= df.index)
+    df[['product_name','price']] = pd.DataFrame(df.order_content.tolist(), index= df.index)
 
     #striping whitespaces
     df['price'] = df['price'].str.strip()
-    df['item'] = df['item'].str.strip()
+    df['product_name'] = df['product_name'].str.strip()
 
     #drop old columns
     df = df.drop(columns=["order_content"])
 
     #rearrange columns
-    new_col = ["date_time", "branch", "customer", "item","price", "total_price", "payment_type","credit_card_number"]
+    new_col = ["date_time", "branch", "customer", "product_name","price", "total_price", "payment_type","credit_card_number"]
     df = df[new_col]
 
     return df

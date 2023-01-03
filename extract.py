@@ -4,11 +4,11 @@ import numpy as np
 
 col_names = [
     "timestamp",
-    "store_name",
+    "branch_name",
     "customer_name",
     "products",
     "total_price",
-    "payment_method",
+    "payment_type",
     "card_number"
 ]
 to_drop = [
