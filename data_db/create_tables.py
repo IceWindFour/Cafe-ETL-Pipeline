@@ -20,7 +20,7 @@ price FLOAT,
 total_price FLOAT,
 payment_type TEXT);
 """)
-
+# :))))
 cur.execute("""CREATE TABLE IF NOT EXISTS orders_details_table
     (order_id SERIAL PRIMARY KEY,
 branch_name TEXT,
