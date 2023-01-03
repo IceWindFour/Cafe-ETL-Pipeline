@@ -21,14 +21,14 @@ cur = conn.cursor()
 # payment_type TEXT);
 # """)
 
-cur.execute("""CREATE TABLE IF NOT EXISTS branch
+cur.execute("""CREATE TABLE IF NOT EXISTS branchs
     (branch_id SERIAL PRIMARY KEY,
-    branch_name TEXT UNIQUE)
+    branch TEXT UNIQUE)
 """)
 
-cur.execute("""CREATE TABLE IF NOT EXISTS product
+cur.execute("""CREATE TABLE IF NOT EXISTS products
     (product_id SERIAL PRIMARY KEY,
-    products_name TEXT UNIQUE)
+    product_name TEXT UNIQUE)
 """)
 
 cur.execute("""CREATE TABLE IF NOT EXISTS orders
@@ -38,8 +38,8 @@ product_id INT,
 total_price FLOAT,
 payment_type TEXT,
 date_and_time TIMESTAMP,
-FOREIGN KEY(branch_id) REFERENCES branch(branch_id),
-FOREIGN KEY(product_id) REFERENCES product(product_id))
+FOREIGN KEY(branch_id) REFERENCES branchs(branch_id),
+FOREIGN KEY(product_id) REFERENCES products(product_id))
 """)
 
 # cur.execute("""CREATE TABLE IF NOT EXISTS orders_products_table
