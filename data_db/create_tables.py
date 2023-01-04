@@ -26,20 +26,21 @@ cur.execute("""CREATE TABLE IF NOT EXISTS branchs
     branch TEXT UNIQUE)
 """)
 
-cur.execute("""CREATE TABLE IF NOT EXISTS products
-    (product_id SERIAL PRIMARY KEY,
-    product_name TEXT UNIQUE)
+cur.execute("""CREATE TABLE IF NOT EXISTS baskets
+    (basket_id SERIAL PRIMARY KEY,
+    basket_item TEXT UNIQUE,
+    item_price FLOAT)
 """)
 
-cur.execute("""CREATE TABLE IF NOT EXISTS orders
-    (order_id SERIAL PRIMARY KEY,
+cur.execute("""CREATE TABLE IF NOT EXISTS transactions
+    (transaction_id SERIAL PRIMARY KEY,
 branch_id INT,
-product_id INT,
+basket_id INT,
 total_price FLOAT,
 payment_type TEXT,
 date_time TIMESTAMP,
 FOREIGN KEY(branch_id) REFERENCES branchs(branch_id),
-FOREIGN KEY(product_id) REFERENCES products(product_id))
+FOREIGN KEY(basket_id) REFERENCES baskets(basket_id))
 """)
 
 # cur.execute("""CREATE TABLE IF NOT EXISTS orders_products_table
