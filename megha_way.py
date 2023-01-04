@@ -37,24 +37,20 @@ def cleaning_and_arranging_df(df):
 
 df = cleaning_and_arranging_df(df)
 
-drop_for_branch = ["date_time", "customer", "basket_item","item_price", "total_price", "payment_type","credit_card_number"]
-drop_for_basket = ["date_time", "branch", "customer", "total_price", "payment_type","credit_card_number"]
-drop_for_transaction = ["branch", "customer", "basket_item","item_price","credit_card_number"]
+drop_for_product = ["date_time", "branch", "customer", "total_price", "payment_type","credit_card_number"]
+# drop_for_basket = ["date_time", "branch", "customer", "basket_item","item_price", "total_price", "payment_type","credit_card_number"]
+drop_for_transaction = ["customer", "basket_item","item_price","credit_card_number"]
 
 def dropping_colums(df,drop_cols):
     df = df.drop(drop_cols, axis=1)
     return df
 
-branch_df = dropping_colums(df, drop_for_branch)
-branch_df = branch_df.drop_duplicates()
-basket_df = dropping_colums(df, drop_for_basket)
-basket_df['basket_id'] = basket_df.index
+product_df = dropping_colums(df, drop_for_product)
+product_df.drop_duplicates()
 
-print(basket_df)
 transaction_df = dropping_colums(df, drop_for_transaction)
 transaction_df["date_time"] = pd.to_datetime(transaction_df["date_time"])
 transaction_df = transaction_df.drop_duplicates()
-transaction_df['transaction_id'] = transaction_df.index
 
 
 
@@ -77,9 +73,30 @@ def execute_values(conn, df, table):
     print("the dataframe is inserted")
     cursor.close()
 
+def execute_values_on_conflict(conn, df, table):
+    
+    tuples = [tuple(x) for x in df.to_numpy()]
+
+    cols = ','.join(list(df.columns))
+    # SQL query to execute
+    query = "INSERT INTO %s(%s) VALUES %%s" % (table, cols)
+
+    query = query + "ON CONFLICT (basket_item) DO NOTHING"
+    cursor = conn.cursor()
+    try:
+        extras.execute_values(cursor, query, tuples)
+        conn.commit()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print("Error: %s" % error)
+        conn.rollback()
+        cursor.close()
+        return 1
+    print("the dataframe is inserted")
+    cursor.close()
+
 
 conn = psycopg2.connect(database="postgres", user = "postgres", password = "pass", host = "localhost", port = "5432")
 
-# execute_values(conn, branch_df, 'branchs')
+execute_values_on_conflict(conn, product_df, 'products')
 # execute_values(conn, basket_df, 'baskets')
-# execute_values(conn, transaction_df, 'transactions')
+execute_values(conn, transaction_df, 'transactions')
