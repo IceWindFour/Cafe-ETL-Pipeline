@@ -15,7 +15,7 @@ cur = conn.cursor()
 
 cur.execute("""CREATE TABLE IF NOT EXISTS products
     (product_id SERIAL PRIMARY KEY,
-    basket_item TEXT UNIQUE,
+    product_name TEXT UNIQUE,
     item_price FLOAT)
 """)
 
@@ -30,8 +30,7 @@ date_time TIMESTAMP)
 cur.execute("""CREATE TABLE IF NOT EXISTS baskets
     (basket_item_id SERIAL PRIMARY KEY,
     transaction_id INT,
-    product_id INT,
-    FOREIGN KEY(product_id) REFERENCES products(product_id),
+    product_name TEXT,
     FOREIGN KEY(transaction_id) REFERENCES transactions(transaction_id))
 """)
 
