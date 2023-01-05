@@ -31,7 +31,7 @@ cur.execute("""CREATE TABLE IF NOT EXISTS baskets
     (basket_item_id SERIAL PRIMARY KEY,
     transaction_id INT,
     product_name TEXT,
-    FOREIGN KEY(transaction_id) REFERENCES transactions(transaction_id))
+    )
 """)
 
 
