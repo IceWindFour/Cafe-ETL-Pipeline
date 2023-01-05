@@ -20,7 +20,7 @@ cur.execute("""CREATE TABLE IF NOT EXISTS products
 """)
 
 cur.execute("""CREATE TABLE IF NOT EXISTS transactions
-    (transaction_id SERIAL PRIMARY KEY,
+    (transaction_id NUMERIC PRIMARY KEY,
 branch TEXT NOT NULL,
 total_price FLOAT,
 payment_type TEXT,
@@ -29,9 +29,8 @@ date_time TIMESTAMP)
 
 cur.execute("""CREATE TABLE IF NOT EXISTS baskets
     (basket_item_id SERIAL PRIMARY KEY,
-    transaction_id INT,
-    product_name TEXT,
-    )
+    transaction_id NUMERIC,
+    product_name TEXT)
 """)
 
 

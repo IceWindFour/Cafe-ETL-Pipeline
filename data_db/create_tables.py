@@ -13,27 +13,26 @@ print("Opened datebase successfully")
 cur = conn.cursor()
 
 
-cur.execute("""CREATE TABLE IF NOT EXISTS branchs
-    (branch_id SERIAL PRIMARY KEY,
-    branch TEXT UNIQUE)
-""")
-
-cur.execute("""CREATE TABLE IF NOT EXISTS baskets
-    (basket_id SERIAL PRIMARY KEY,
-    basket_item TEXT,
+cur.execute("""CREATE TABLE IF NOT EXISTS products
+    (product_id SERIAL PRIMARY KEY,
+    product_name TEXT UNIQUE,
     item_price FLOAT)
 """)
 
 cur.execute("""CREATE TABLE IF NOT EXISTS transactions
-    (transaction_id SERIAL PRIMARY KEY,
-branch_id INT NOT NULL,
-basket_id INT NOT NULL,
+    (transaction_id NUMERIC PRIMARY KEY,
+branch TEXT NOT NULL,
 total_price FLOAT,
 payment_type TEXT,
-date_time TIMESTAMP,
-FOREIGN KEY(branch_id) REFERENCES branchs(branch_id),
-FOREIGN KEY(basket_id) REFERENCES baskets(basket_id))
+date_time TIMESTAMP)
 """)
+
+cur.execute("""CREATE TABLE IF NOT EXISTS baskets
+    (basket_item_id SERIAL PRIMARY KEY,
+    transaction_id NUMERIC,
+    product_name TEXT)
+""")
+
 
 print("Table created successfully")
 
