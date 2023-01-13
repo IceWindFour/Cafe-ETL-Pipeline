@@ -6,7 +6,7 @@ CREATE TABLE "public"."products" (
 
 CREATE TABLE "public"."payments" (
 "payment_id" INTEGER IDENTITY(1,1) PRIMARY KEY,
-"payment_type" VARCHAR(255)
+"payment_type" VARCHAR(255) UNIQUE
 );
 
 CREATE TABLE "public"."branchs" (
