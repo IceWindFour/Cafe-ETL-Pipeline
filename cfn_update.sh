@@ -12,7 +12,7 @@ working_dir=$3
 
 # Get the hashes of the files
 hash1=$(md5sum $file | awk '{print $1}')
-hash2=$(echo $value | awk '{print $1;}')
+hash2=$(echo "$value" | awk '{print $1;}')
 
 
 # Compare the hashes
