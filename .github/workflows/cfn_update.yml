@@ -19,9 +19,10 @@ jobs:
     - name: Download hash.txt into github workspace
       run: aws s3 cp s3://oldmengrinding-cicd/hash.txt hash.txt
     - name: Make it executable
-      run: chmod +x $GITHUB_WORKSPACE/hash.txt
-    # - name: Compare hash and update stack
-    #   run: cfn_update.sh cloudformation_cicd.yml oldmengrinding
+      run: chmod +x $GITHUB_WORKSPACE/cfn_update.sh
+    - name: Compare hash and update stack
+      run: cfn_update.sh $GITHUB_WORKSPACE/.github/workflows/cloudformation_cicd.yml $GITHUB_WORKSPACE/hash.txt
+    
 
 
 
