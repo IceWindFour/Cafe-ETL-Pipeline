@@ -3,16 +3,16 @@
 # Get the file name and stack name
 cloudformation_file=$1
 
-hash_file="$(<$2)"
+hash_file="$($2)"
 
 echo $hash_file
-value="$(cat $hash_file)" 
+value="$(<$hash_file)" 
 working_dir=$3
 
 
 # Get the hashes of the files
 hash1=$(md5sum $file | awk '{print $1}')
-hash2=$(echo "$value" | awk '{print $1;}')
+hash2=$(echo $value | awk '{print $1;}')
 
 
 # Compare the hashes
