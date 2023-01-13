@@ -17,8 +17,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: eu-west-1
     - name: Compare hash and update stack
-        run: aws s3 ls
-      # run: ./cfn_update.sh ./cloudformation_cicd.yml oldmengrinding
+      run: cfn_update.sh cloudformation_cicd.yml oldmengrinding
 
 
 
