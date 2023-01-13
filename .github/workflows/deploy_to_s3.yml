@@ -9,20 +9,23 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Configure AWS credentials and checkout
+      - name: Checkout the repo
         uses: actions/checkout@v3
-      - uses: aws-actions/configure-aws-credentials@v1
+      - name: Configure AWS credentials and checkout
+        uses: aws-actions/configure-aws-credentials@v1
 
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-1
-      - name: List the content in bucket
-        run: aws s3 ls oldmengrinding-cicd/
-      - name: Copy the cloudformation yaml to bucket
-        run: aws s3 cp cloudformation_cicd.yml s3://oldmengrinding-cicd/cloudformation_cicd.yml
-      - name: Create stack
-        run: aws cloudformation create-stack 
-              --stack-name oldmengrinding 
-              --template-url https://oldmengrinding-cicd.s3.eu-west-1.amazonaws.com/cloudformation_cicd.yml
-              --region eu-west-1      
+          name: Run the check hash bash script
+          run: scripts.sh
+      # - name: List the content in bucket
+      #   run: aws s3 ls oldmengrinding-cicd/
+      # - name: Copy the cloudformation yaml to bucket
+      #   run: aws s3 cp cloudformation_cicd.yml s3://oldmengrinding-cicd/cloudformation_cicd.yml
+      # - name: update stack
+      #   run: aws cloudformation update-stack 
+      #         --stack-name oldmengrinding 
+      #         --template-url https://oldmengrinding-cicd.s3.eu-west-1.amazonaws.com/cloudformation_cicd.yml
+      #         --region eu-west-1      
