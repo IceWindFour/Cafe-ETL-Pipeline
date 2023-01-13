@@ -6,7 +6,7 @@ cloudformation_file=$1
 hash_file="$(<$2)"
 
 echo $hash_file
-value="$($hash_file)"
+value="$(cat $hash_file)" 
 working_dir=$3
 
 
