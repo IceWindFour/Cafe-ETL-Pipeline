@@ -21,8 +21,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-1
           
-      # - name: List the content in bucket
-      #   run: aws s3 ls oldmengrinding-cicd/
+      - name: List the content in bucket
+        run: aws s3 ls oldmengrinding-cicd/
       # - name: Copy the cloudformation yaml to bucket
       #   run: aws s3 cp cloudformation_cicd.yml s3://oldmengrinding-cicd/cloudformation_cicd.yml
       # - name: update stack
