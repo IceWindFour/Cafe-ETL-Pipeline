@@ -23,12 +23,14 @@ jobs:
     - name: Compare hash and update stack
       run: |
         CFN_UPDATE=$(./cfn_update.sh $GITHUB_WORKSPACE/.github/workflows/cloudformation_cicd.yml $GITHUB_WORKSPACE/hash.txt $GITHUB_WORKSPACE) \
-        if [ CFN_UPDATE == 1 ]; then \
+        if [ CFN_UPDATE == 1 ] \
+        then \
           aws s3 cp $GITHUB_WORKSPACE/hash.txt s3://oldmengrinding-cicd/hash.txt  \
           aws s3 cp $GITHUB_WORKSPACE/.github/workflows/cloudformation_cicd.yml s3://oldmengrinding-cicd/cloudformation_cicd.yml \
           aws cloudformation update-stack --stack-name oldmengrinding --template-url https://oldmengrinding-cicd.s3.eu-west-1.amazonaws.com/cloudformation_cicd.yml --region eu-west-1 \
         else \
           exit 1
+        fi
 
 
 

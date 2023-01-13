@@ -5,7 +5,7 @@ cloudformation_file=$1
 
 hash_file="$(<$2)"
 value="$(<$hash_file)"
-
+working_dir=$3
 
 # Get the hashes of the files
 hash1=$(md5sum $file | awk '{print $1}')
@@ -18,7 +18,10 @@ if [ "$hash1" != "$hash2" ]; then
     # aws cloudformation update-stack --stack-name $stack_name --template-body file://$file
 
     # upload the updated hash into a txt in oldmengrinding bucket
+    hash1 > working_dir/hash.txt
     # update the stack
+    exit 1
 else
     echo "The files are identical, no update needed."
+    exit 0
 fi
