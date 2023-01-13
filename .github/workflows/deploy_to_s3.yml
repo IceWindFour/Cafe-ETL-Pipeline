@@ -11,8 +11,8 @@ jobs:
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v3
-      # - name: Configure AWS credentials and checkout
-      #   uses: aws-actions/configure-aws-credentials@v1
+      - name: Configure AWS credentials and checkout
+        uses: aws-actions/configure-aws-credentials@v1
       - name: Make script executable
         run: chmod +x scripts.sh
       - name: Run the check hash bash script
