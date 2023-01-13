@@ -13,13 +13,14 @@ jobs:
         uses: actions/checkout@v3
       - name: Configure AWS credentials and checkout
         uses: aws-actions/configure-aws-credentials@v1
+      - name: Run the check hash bash script
+        run: scripts.sh
 
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-1
-          name: Run the check hash bash script
-          run: scripts.sh
+          
       # - name: List the content in bucket
       #   run: aws s3 ls oldmengrinding-cicd/
       # - name: Copy the cloudformation yaml to bucket
