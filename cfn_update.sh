@@ -3,10 +3,6 @@
 # Get the file name and stack name
 cloudformation_file=$1
 
-# aws download the hash.txt from s3 bucket
-aws s3 cp s3://oldmengrinding-cicd/hash.txt hash.txt
-
-
 # hash_file="$(<hash.txt)"
 # value="$(<$hash_file)"
 

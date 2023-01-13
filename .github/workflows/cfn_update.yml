@@ -16,10 +16,12 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: eu-west-1
+    - name: Download hash.txt into github workspace
+      run: aws s3 cp s3://oldmengrinding-cicd/hash.txt hash.txt
     - name: Make it executable
-      run: echo $GITHUB_WORKSPACE
-    - name: Compare hash and update stack
-      run: cfn_update.sh cloudformation_cicd.yml oldmengrinding
+      run: chmod +x $GITHUB_WORKSPACE/hash.txt
+    # - name: Compare hash and update stack
+    #   run: cfn_update.sh cloudformation_cicd.yml oldmengrinding
 
 
 
