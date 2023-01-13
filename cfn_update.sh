@@ -4,8 +4,11 @@
 cloudformation_file=$1
 
 hash_file="$(<$2)"
+
+echo $hash_file
 value="$(<$hash_file)"
 working_dir=$3
+
 
 # Get the hashes of the files
 hash1=$(md5sum $file | awk '{print $1}')
