@@ -1,0 +1,14 @@
+permissions:
+  id-token: write # required to use OIDC authentication
+  contents: read # required to checkout the code from the repo
+
+
+- name: configure aws credentials
+  uses: aws-actions/configure-aws-credentials@v1
+  with:
+    role-to-assume: arn:aws:iam::948243690849:role/group4_cicd_trying
+    role-duration-seconds: 900 # the ttl of the session, in seconds.
+    aws-region: eu-west-1 # use your region here.
+# You can now execute commands that use the credentials👇
+- name: Serverless deploy
+  run: sls deploy --stage dev
