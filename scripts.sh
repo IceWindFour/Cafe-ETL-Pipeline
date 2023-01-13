@@ -1,3 +1,2 @@
-echo 'hello world'
-
-echo 'yoho'
+#!/bin/bash
+echo "Hello World!"
