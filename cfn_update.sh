@@ -3,7 +3,7 @@
 # Get the file name and stack name
 cloudformation_file=$1
 
-hash_file="$($2)"
+hash_file="$(<$2)"
 
 echo $hash_file
 value="$(<$hash_file)" 

@@ -22,7 +22,7 @@ jobs:
       run: chmod +x $GITHUB_WORKSPACE/cfn_update.sh
     - name: Compare hash and update stack
       run: |
-        echo $GITHUB_WORKSPACE/hash.txt
+        cat $GITHUB_WORKSPACE/hash.txt
         CFN_UPDATE=$(./cfn_update.sh $GITHUB_WORKSPACE/.github/workflows/cloudformation_cicd.yml $GITHUB_WORKSPACE/hash.txt $GITHUB_WORKSPACE) \
         if [ CFN_UPDATE == 1 ] \
         then \
