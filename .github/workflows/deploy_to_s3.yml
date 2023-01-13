@@ -24,5 +24,5 @@ jobs:
       - name: Create stack
         run: aws cloudformation create-stack 
               --stack-name oldmengrinding 
-              --template-url https://oldmengrinding-cicd.s3.eu-west1.amazonaws.com/cloudformation_cicd.yml 
+              --template-url https://oldmengrinding-cicd.s3.eu-west-1.amazonaws.com/cloudformation_cicd.yml
               --region eu-west-1      
