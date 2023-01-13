@@ -4,4 +4,4 @@ Resources:
   MyS3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: old-men-grinding
+      BucketName: old-men-grinding222
