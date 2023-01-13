@@ -21,7 +21,7 @@ jobs:
     - name: Make it executable
       run: chmod +x $GITHUB_WORKSPACE/cfn_update.sh
     - name: Compare hash and update stack
-      run: cfn_update.sh $GITHUB_WORKSPACE/.github/workflows/cloudformation_cicd.yml $GITHUB_WORKSPACE/hash.txt
+      run: ./cfn_update.sh $GITHUB_WORKSPACE/.github/workflows/cloudformation_cicd.yml $GITHUB_WORKSPACE/hash.txt
     
 
 
