@@ -21,7 +21,7 @@ if [ "$hash1" != "$hash2" ]; then
     # aws cloudformation update-stack --stack-name $stack_name --template-body file://$file
 
     # upload the updated hash into a txt in oldmengrinding bucket
-    hash1 > working_dir/hash.txt
+    echo $hash1 > working_dir/hash.txt
     # update the stack
     exit 1
 else
