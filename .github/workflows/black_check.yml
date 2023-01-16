@@ -27,5 +27,6 @@ jobs:
 
     - name: Run syntax check
       run: |
-        black --check --include-find '\.py$' .
+        find . -name '*.py' | xargs black --check
+
 
