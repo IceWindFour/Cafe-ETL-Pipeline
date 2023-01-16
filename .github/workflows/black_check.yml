@@ -27,4 +27,4 @@ jobs:
 
     - name: Run syntax check
       run: |
-        black --check --ext py .
+        black --check --include '*.py' .
