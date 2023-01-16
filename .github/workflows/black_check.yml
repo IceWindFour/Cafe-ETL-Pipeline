@@ -27,4 +27,5 @@ jobs:
 
     - name: Run syntax check
       run: |
-        black --check --include '*.py' .
+        black --check --include-find '\.py$' .
+
