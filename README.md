@@ -42,19 +42,27 @@ After a thorough analysis and discovery of what the client is looking for, a pla
 
 The project will consist of fivesprints, where each sprint is a week in length.
 
-#### Sprint 1
-- Extraction of data
-- Removal of senesitve data
-- Design schema to model data
-- Normalise data to 3NF
-- Create SQL script to generate
-- Setup docker-compose file to create network of containers
 
-#### Sprint 2
-To be confirmed
-## Demo
 
-To be constructed
+## **Development Roadmap**
+### Week One - Setup basic ETL pipeline (Proof of concept)
+- [x] Extraction of data
+- [x] Design schema to model data
+- [x] Normalise data to 3NF
+- [x] Create SQL script to generate
+- [x] Setup docker-compose file to create network of containers
+
+### Week Two - Move ETL pipeline to the cloud
+- [x] Set up database in AWS Redshift
+- [x] Set up AWS Lambda to be triggered by and S3 event
+- [x] Modify Labda to run ETL
+- [x] Configure cloudformation
+
+### Week Three - Automate Deployment and Visualise Data
+- [x] Grafana Set up
+- [x] Visualise Sales Data
+- [x] Set Up CI/CD (github actions) Pipeline
+
 
 
 ## Installation
