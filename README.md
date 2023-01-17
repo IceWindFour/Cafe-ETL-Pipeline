@@ -8,10 +8,10 @@
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://www.linkedin.com/in/asif-shaj/"><img src="https://media.licdn.com/dms/image/C4D03AQHfHgSaJiCrDw/profile-displayphoto-shrink_800_800/0/1565716570776?e=1679529600&v=beta&t=xLJDktoglKlkgupyGea6g5zs8iuWahOU-gratHZ2oZo" width="100px;" alt=""/><br /><sub><b>Asif Shajahan</b></sub></a><br /><a href="https://github.com/asifshaj98" title="Documentation">📖</a> <sub><b>:bird:</b></sub></a></td>
-    <td align="center"><a href="https://www.linkedin.com/in/sheikh-osman-a15a29260/"><img src="https://avatars.githubusercontent.com/u/115299269?v=4" width="100px;" alt=""/><br /><sub><b>Sheikh Osman</b></sub></a><br /><a href="https://github.com/IceWindFour" title="Documentation">📖</a> <sub><b>:gem:</b></sub></a></td>
-     <td align="center"><a href="https://www.linkedin.com/in/faaruq-mansaray-4bb07b240/"><img src="https://media.licdn.com/dms/image/D4E03AQHZnxzf7clpEg/profile-displayphoto-shrink_800_800/0/1673812589476?e=1679529600&v=beta&t=-QyywKg9hLL6d__H1VMLET0nXHiMNx3p_SF18awlx9I" width="100px;" alt=""/><br /><sub><b>Faaruq Mansaray</b></sub></a><br /><a href="https://github.com/OmgFaaruq" title="Documentation">📖</a> <sub><b>:chart_with_upwards_trend:</b></sub></a></td>
-     <td align="center"><a href="https://www.linkedin.com/in/daniel-lui-uk/"><img src="https://media.licdn.com/dms/image/C5603AQH3tyNuCiOJwA/profile-displayphoto-shrink_800_800/0/1629199050430?e=1679529600&v=beta&t=tKLZgEsr8iXshu6D9SVmD17t65qXrc9eCaUEIT-M63E" width="100px;" alt=""/><br /><sub><b>Daniel Lui</b></sub></a><br /><a href="https://github.com/danielluimkuk" title="Documentation">📖</a> <sub><b>:sunflower:</b></sub></a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/asif-shaj/"><img src="https://media.licdn.com/dms/image/C4D03AQHfHgSaJiCrDw/profile-displayphoto-shrink_800_800/0/1565716570776?e=1679529600&v=beta&t=xLJDktoglKlkgupyGea6g5zs8iuWahOU-gratHZ2oZo" width="100px;" alt=""/><br /><sub><b>Asif Shajahan</b></sub></a><br /><a href="https://github.com/asifshaj98" title="Documentation">📖</a> <sub><b>:medal_military:</b></sub></a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/sheikh-osman-a15a29260/"><img src="https://avatars.githubusercontent.com/u/115299269?v=4" width="100px;" alt=""/><br /><sub><b>Sheikh Osman</b></sub></a><br /><a href="https://github.com/IceWindFour" title="Documentation">📖</a> <sub><b>:medal_military:</b></sub></a></td>
+     <td align="center"><a href="https://www.linkedin.com/in/faaruq-mansaray-4bb07b240/"><img src="https://media.licdn.com/dms/image/D4E03AQHZnxzf7clpEg/profile-displayphoto-shrink_800_800/0/1673812589476?e=1679529600&v=beta&t=-QyywKg9hLL6d__H1VMLET0nXHiMNx3p_SF18awlx9I" width="100px;" alt=""/><br /><sub><b>Faaruq Mansaray</b></sub></a><br /><a href="https://github.com/OmgFaaruq" title="Documentation">📖</a> <sub><b>:medal_military:</b></sub></a></td>
+     <td align="center"><a href="https://www.linkedin.com/in/daniel-lui-uk/"><img src="https://media.licdn.com/dms/image/C5603AQH3tyNuCiOJwA/profile-displayphoto-shrink_800_800/0/1629199050430?e=1679529600&v=beta&t=tKLZgEsr8iXshu6D9SVmD17t65qXrc9eCaUEIT-M63E" width="100px;" alt=""/><br /><sub><b>Daniel Lui</b></sub></a><br /><a href="https://github.com/danielluimkuk" title="Documentation">📖</a> <sub><b>:medal_military:</b></sub></a></td>
   </tr>
 </table>
 
@@ -61,8 +61,10 @@ To be constructed
 
 ## Installation
 
-To be edited
-
+#### Clone repo
+```
+git clone git@github.com:DELON8/group-4-data-engineering-final-project.git
+```
 ```bash
   pip install -r requirements.txt 
 ```
