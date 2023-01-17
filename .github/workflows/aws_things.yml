@@ -6,12 +6,12 @@ on:
     branches:
       - dan-cf
     paths:
-      - cloudformation_code.yml
+      - dan_test.yml
   pull_request:
     branches:
-      - main
+      - dan-cf
     paths:
-      - cloudformation_code.yml
+      - dan_test.yml
 
 permissions:  
   id-token: write
