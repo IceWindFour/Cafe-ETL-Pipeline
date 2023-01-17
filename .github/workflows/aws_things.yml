@@ -5,7 +5,14 @@ on:
   push:
     branches:
       - main
-  
+    paths:
+      - $GITHUB_WORKSPACE/cloudformation_code.yml
+  pull_request:
+    branches:
+      - main
+    paths:
+      - $GITHUB_WORKSPACE/cloudformation_code.yml
+      
 permissions:  
   id-token: write
   contents: read
