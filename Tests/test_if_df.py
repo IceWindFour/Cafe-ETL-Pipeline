@@ -7,3 +7,5 @@ def test_df_type():
     df = pd.read_csv(file_path, names=column_names)
 
     cleaned_df = cleaning_and_arranging_df(df)
+
+    assert isinstance(cleaned_df, pd.DataFrame) == True
