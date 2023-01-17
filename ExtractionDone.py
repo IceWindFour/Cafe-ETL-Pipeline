@@ -13,7 +13,7 @@ import numpy as np
 # In[2]:
 
 
-#Checks working directory
+# Checks working directory
 # get_ipython().system('dir')
 
 
@@ -45,10 +45,10 @@ get_csv_file()
 # In[42]:
 
 
-def make_directory(csv_files,dataset_dir):
-    dataset_dir = 'datasets'
+def make_directory(csv_files, dataset_dir):
+    dataset_dir = "datasets"
     try:
-        mkdir = 'mkdir {0}'.format(dataset_dir)
+        mkdir = "mkdir {0}".format(dataset_dir)
         os.system(mkdir)
     except:
         print("error")
@@ -57,7 +57,6 @@ def make_directory(csv_files,dataset_dir):
         os.system(mv_file)
         print(mv_file)
     return
-    
 
 
 # In[56]:
@@ -78,7 +77,7 @@ col_names = [
 # In[57]:
 
 
-#Asif's File path
+# Asif's File path
 file_path = "chesterfield_25-08-2021_09-00-00.csv"
 
 # Undo this to test directory file_path = "reports_from_branches/chesterfield_25-08-2021_09-00-00.csv"
@@ -87,11 +86,10 @@ file_path = "chesterfield_25-08-2021_09-00-00.csv"
 # In[58]:
 
 
-
-def into_df(file_path:str,col_names:list = col_names) -> pd.DataFrame:
+def into_df(file_path: str, col_names: list = col_names) -> pd.DataFrame:
     """Converts the csv file to a pandas dataframe"""
     try:
-        df = pd.read_csv(Path(file_path),names= col_names)
+        df = pd.read_csv(Path(file_path), names=col_names)
         return df
     except FileNotFoundError:
         print("No such file exists")
@@ -102,26 +100,26 @@ def into_df(file_path:str,col_names:list = col_names) -> pd.DataFrame:
 
 drop_col = ["customer_name", "card_number"]
 
-#Deletes the columns that have costumers personal details
-def delete_col(df,colums_to_drop):
+# Deletes the columns that have costumers personal details
+def delete_col(df, colums_to_drop):
     try:
-        df.drop(colums_to_drop,axis= 1,inplace= True)
+        df.drop(colums_to_drop, axis=1, inplace=True)
         df["date_time"] = pd.to_datetime(df["date_time"])
         return df
     except:
-        print('error')
+        print("error")
 
 
 # In[60]:
 
 
-#Main
+# Main
 drop_col = ["customer_name", "card_number"]
-into_df(file_path,col_names)
-new_df = delete_col(into_df(file_path,col_names),drop_col)
+into_df(file_path, col_names)
+new_df = delete_col(into_df(file_path, col_names), drop_col)
 
-#Reset index to start from 1
-new_df.index =  np.arange(1, len(new_df) + 1)
+# Reset index to start from 1
+new_df.index = np.arange(1, len(new_df) + 1)
 
 
 # In[61]:
@@ -131,7 +129,3 @@ new_df
 
 
 # In[ ]:
-
-
-
-
