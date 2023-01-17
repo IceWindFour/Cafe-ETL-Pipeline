@@ -74,7 +74,33 @@ git clone git@github.com:DELON8/group-4-data-engineering-final-project.git
 ```bash
   pip install -r requirements.txt 
 ```
-    
+
+## Docker for PostgreSQL setup
+```
+version: "3.7"
+services:
+  db:
+    image: postgres
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: "pass"
+    ports:
+      - 5432:5432
+    volumes:
+      - data_db:/var/lib/postgresql/data
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - 6969:8080
+volumes:
+  data_db:
+```
+
+
+
 ## Deployment
 
 To deploy this project run
