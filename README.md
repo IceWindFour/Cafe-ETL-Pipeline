@@ -1,13 +1,19 @@
 # Data-engineering-final-project
 ## Group 4 team name: SHEIKH & BAKE
-## Authors
 
-- Asif Shaj - https://github.com/asifshaj98
-- Daniel Lui - https://github.com/danielluimkuk
-- Faaruq Mansaray - https://github.com/OmgFaaruq
-- Sheikh Osman - https://github.com/IceWindFour
-
-    Product owner / Instructor - Patrick Cando - https://github.com/pcandoalmeida
+### Contributors:
+**Team 4**, Data Engineering DE-LON8 Cohort
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://www.linkedin.com/in/asif-shaj/"><img src="https://media.licdn.com/dms/image/C4D03AQHfHgSaJiCrDw/profile-displayphoto-shrink_800_800/0/1565716570776?e=1679529600&v=beta&t=xLJDktoglKlkgupyGea6g5zs8iuWahOU-gratHZ2oZo" width="100px;" alt=""/><br /><sub><b>Asif Shajahan</b></sub></a><br /><a href="https://github.com/asifshaj98" title="Documentation">📖</a> <sub><b>:bird:</b></sub></a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/sheikh-osman-a15a29260/"><img src="https://avatars.githubusercontent.com/u/115299269?v=4" width="100px;" alt=""/><br /><sub><b>Sheikh Osman</b></sub></a><br /><a href="https://github.com/IceWindFour" title="Documentation">📖</a> <sub><b>:gem:</b></sub></a></td>
+     <td align="center"><a href="https://www.linkedin.com/in/faaruq-mansaray-4bb07b240/"><img src="https://media.licdn.com/dms/image/D4E03AQHZnxzf7clpEg/profile-displayphoto-shrink_800_800/0/1673812589476?e=1679529600&v=beta&t=-QyywKg9hLL6d__H1VMLET0nXHiMNx3p_SF18awlx9I" width="100px;" alt=""/><br /><sub><b>Faaruq Mansaray</b></sub></a><br /><a href="https://github.com/OmgFaaruq" title="Documentation">📖</a> <sub><b>:chart_with_upwards_trend:</b></sub></a></td>
+     <td align="center"><a href="https://www.linkedin.com/in/daniel-lui-uk/"><img src="https://media.licdn.com/dms/image/C5603AQH3tyNuCiOJwA/profile-displayphoto-shrink_800_800/0/1629199050430?e=1679529600&v=beta&t=tKLZgEsr8iXshu6D9SVmD17t65qXrc9eCaUEIT-M63E" width="100px;" alt=""/><br /><sub><b>Daniel Lui</b></sub></a><br /><a href="https://github.com/danielluimkuk" title="Documentation">📖</a> <sub><b>:sunflower:</b></sub></a></td>
+  </tr>
+</table>
 
 
 ## Background
@@ -112,4 +118,9 @@ To run tests, run the following command
 ## Screenshots
 
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+
+
+
+
 
