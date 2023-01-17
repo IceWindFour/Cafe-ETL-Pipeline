@@ -34,5 +34,5 @@ jobs:
           aws-region: eu-west-1 
           role-duration-seconds: 1200
 
-      - name: List S3 buckets to test credentials
+      - name: Update stack
         run: aws cloudformation update-stack --stack-name oldmengrinding --template-body file://$GITHUB_WORKSPACE/dan_test.yml
