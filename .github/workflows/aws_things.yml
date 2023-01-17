@@ -4,7 +4,7 @@ name: AWS-thing
 on:
   push:
     branches:
-      - main
+      - dan-cf
     paths:
       - cloudformation_code.yml
   pull_request:
@@ -32,4 +32,4 @@ jobs:
           role-duration-seconds: 1200
 
       - name: List S3 buckets to test credentials
-        run: aws s3 ls group4-cf-bucket-1
+        run: aws cloudformation update-stack --stack-name oldmengrinding --template-body file://dan_test.yml
