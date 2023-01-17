@@ -68,7 +68,7 @@ The project will consist of fivesprints, where each sprint is a week in length.
 ## Installation
 
 #### Clone repo
-```
+```python
 git clone git@github.com:DELON8/group-4-data-engineering-final-project.git
 ```
 ```bash
@@ -76,7 +76,18 @@ git clone git@github.com:DELON8/group-4-data-engineering-final-project.git
 ```
 
 ## Docker for PostgreSQL setup
+Began by creating a directoryand then create a docker-compose.yml file within the directory:
+
+```python
+mkdir postgres
+cd postgres
+touch docker-compose.yml
 ```
+
+
+
+
+```python
 version: "3.7"
 services:
   db:
