@@ -1,5 +1,4 @@
-# Data-engineering-final-project
-## Group 4
+# Data-engineering-final-project - Group 4
 
 ### Contributors:
 **Team 4**, Data Engineering DE-LON8 Cohort
