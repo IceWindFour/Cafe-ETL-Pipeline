@@ -15,6 +15,6 @@ services:
     container_name: adminer
     restart: always
     ports:
-      - 6969:8080
+      - 8080:8080
 volumes:
   data_db:
