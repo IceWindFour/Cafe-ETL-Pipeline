@@ -24,18 +24,14 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
       - name: Configure AWS credentials 
         uses: aws-actions/configure-aws-credentials@v1-node16
         with:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/github-deploy-role
           aws-region: eu-west-1 
           role-duration-seconds: 1200
-      - name: Install AWS CLI
-        run: sudo apt-get install awscli -y
-      - name: Validate Cloudformation template
-        run: aws cloudformation validate-template --template-body file://cloudformation_code.yaml
-      - name: Update CloudFormation stack
-        run: |
-          aws cloudformation update-stack --stack-name g4cfteststack --template-body file://cloudformation_code.yaml --region eu-west-1
+
+      - name: List S3 buckets to test credentials
+        run: aws s3 ls group4-cf-bucket-1
+      - name: Update stack
+        run: aws cloudformation update-stack --stack-name g4cfteststack --template-body file://$GITHUB_WORKSPACE/cloudformation_code.yaml --region eu-west-1
