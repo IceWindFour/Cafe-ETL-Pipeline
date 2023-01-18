@@ -34,4 +34,4 @@ jobs:
       - name: List S3 buckets to test credentials
         run: aws s3 ls group4-cf-bucket-1
       - name: Update stack
-        run: aws cloudformation update-stack --stack-name 
+        run: aws cloudformation update-stack --stack-name g4cfteststack --template-body file://cloudformation_code.yml --region eu-west-1
