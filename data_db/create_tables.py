@@ -8,57 +8,76 @@ print("Opened datebase successfully")
 
 cur = conn.cursor()
 
+
 cur.execute(
-    """CREATE TABLE IF NOT EXISTS order_table
-    (date_and_time TEXT PRIMARY KEY,
-branch_name TEXT,
-item TEXT,
-price FLOAT,
-total_price FLOAT,
-payment_type TEXT);
+    """CREATE TABLE IF NOT EXISTS products
+    (product_id SERIAL PRIMARY KEY,
+    product_name TEXT UNIQUE,
+    product_price FLOAT)
 """
 )
 
 cur.execute(
-    """CREATE TABLE IF NOT EXISTS orders_details_table
-    (order_id SERIAL PRIMARY KEY,
-branch_name TEXT,
-total_price FLOAT,
-payment_type TEXT,
-date_and_time TEXT,
-FOREIGN KEY(date_and_time)
-REFERENCES order_table(date_and_time));
+    """CREATE TABLE IF NOT EXISTS payments
+    (payment_id SERIAL PRIMARY KEY,
+    payment_type TEXT UNIQUE)
 """
 )
 
 cur.execute(
-    """CREATE TABLE IF NOT EXISTS orders_products_table
-    (order_id INT,
-product_id SERIAL PRIMARY KEY,
-item_price FLOAT,
-quantity INT,
-FOREIGN KEY(order_id)
-REFERENCES orders_details_table(order_id));
+    """CREATE TABLE IF NOT EXISTS branchs
+    (branch_id SERIAL PRIMARY KEY,
+    branch_name TEXT UNIQUE)
 """
 )
 
 cur.execute(
-    """CREATE TABLE IF NOT EXISTS products_table
-    (product_id INT,
-products_name TEXT,
-FOREIGN KEY(product_id)
-REFERENCES orders_products_table(product_id));
+    """CREATE TABLE IF NOT EXISTS transactions
+    (transaction_id SERIAL PRIMARY KEY,
+    branch_id INT,
+    payment_type_id int,
+    total_price FLOAT,
+    date_time timestamp)
 """
 )
 
 cur.execute(
-    """CREATE TABLE IF NOT EXISTS test_table
-    (date_time TEXT,
-branch TEXT,
-item TEXT,
-price float,
-total_price float,
-payment_type TEXT);
+    """CREATE TABLE IF NOT EXISTS baskets
+    (basket_item_id SERIAL PRIMARY KEY,
+    transaction_id int,
+    product_id int)
+"""
+)
+
+cur.execute(
+    """ALTER TABLE transactions
+ADD CONSTRAINT fk_transaction_branch 
+FOREIGN KEY (branch_id) 
+REFERENCES branchs(branch_id);
+"""
+)
+
+cur.execute(
+    """ALTER TABLE transactions
+ADD CONSTRAINT fk_transaction_payment 
+FOREIGN KEY (payment_type_id) 
+REFERENCES payments(payment_id);
+"""
+)
+
+cur.execute(
+    """ALTER TABLE baskets
+ADD CONSTRAINT fk_basket_transaction
+FOREIGN KEY (transaction_id) 
+REFERENCES transactions(transaction_id);
+"""
+)
+
+cur.execute(
+    """ALTER TABLE baskets
+ADD CONSTRAINT fk_basket_product 
+FOREIGN KEY (product_id) 
+REFERENCES products(product_id);
 """
 )
 
