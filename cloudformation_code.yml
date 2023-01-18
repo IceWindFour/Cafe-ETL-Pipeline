@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Resources:
-​
+
   MyBucket:
     Type: AWS::S3::Bucket
     Properties:
@@ -9,7 +9,7 @@ Resources:
         LambdaConfigurations:
         - Event: s3:ObjectCreated:*
           Function: !GetAtt cfg4testlambda.Arn
-​
+
   cfg4testlambda:
     Type: AWS::Lambda::Function
     Properties:
@@ -20,7 +20,7 @@ Resources:
       Handler: lambda_function.lambda_handler
       Runtime: python3.9
       MemorySize: 128
-      Timeout: 3
+      Timeout: 4
       Role: arn:aws:iam::948243690849:role/lambda-execution-role
       VpcConfig:
         SecurityGroupIds:
