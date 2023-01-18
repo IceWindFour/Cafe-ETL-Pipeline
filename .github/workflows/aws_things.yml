@@ -20,10 +20,12 @@ permissions:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   deploy-aws-code:
-    name: List account S3 buckets
+    name: AWS deployment
     runs-on: ubuntu-latest
     
     steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
       - name: Configure AWS credentials 
         uses: aws-actions/configure-aws-credentials@v1-node16
         with:
@@ -34,4 +36,4 @@ jobs:
       - name: List S3 buckets to test credentials
         run: aws s3 ls group4-cf-bucket-1
       - name: Update stack
-        run: aws cloudformation update-stack --stack-name g4cfteststack --template-body file://$GITHUB_WORKSPACE/cloudformation_code.yaml --region eu-west-1
+        run: aws cloudformation update-stack --stack-name g4cfteststack --template-body file://$GITHUB_WORKSPACE/cloudformation_code.yml --region eu-west-1
