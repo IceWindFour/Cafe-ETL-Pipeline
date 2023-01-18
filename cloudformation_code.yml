@@ -47,4 +47,3 @@ Resources:
       SourceAccount: 948243690849
       SourceArn: !Sub "arn:aws:s3:::${MyBucket}"
 
-
