@@ -3,6 +3,7 @@ from transform import branch_df, payment_df, product_df, transaction_df, baskets
 import psycopg2
 import psycopg2.extras as extras
 
+
 def execute_values(conn, df, table):
 
     tuples = [tuple(x) for x in df.to_numpy()]
@@ -43,7 +44,6 @@ try:
     baskets_df = increase_transaction_id(conn, baskets_df, "baskets")
 except:
     print("first insert")
-
 
 
 execute_values(conn, branch_df, "branchs")

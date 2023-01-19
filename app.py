@@ -241,4 +241,3 @@ if __name__ == "__main__":
     execute_values(conn, product_df, "products")
     execute_values(conn, transaction_df, "transactions")
     execute_values(conn, baskets_df, "baskets")
-

@@ -2,6 +2,7 @@ from extract import df
 
 import pandas as pd
 
+
 def cleaning_and_arranging_df(df):
 
     # spliting the first time, turn order_content into a list
@@ -59,6 +60,7 @@ def create_foreign_key_dict(df, col_name):
 def add_foreign_key_column(df, new_col, exist_col, foreign_key_dict):
     df[new_col] = df[exist_col].map(foreign_key_dict)
     return df
+
 
 branch_name = {"Chesterfield": 1, "Longridge": 2, "Uppingham": 3}
 
