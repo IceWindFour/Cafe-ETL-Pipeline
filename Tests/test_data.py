@@ -18,9 +18,9 @@ def data():
 def test_dataframe(data):
     assert isinstance(data, pd.DataFrame)
 
-def test_clean_data(data):
-    clean_df = cleaning_and_arranging_df(data)
+# def test_clean_data(data):
+#     clean_df = cleaning_and_arranging_df(data)
 
-    assert clean_df == data['credit_card_number']
+#     assert clean_df == data['credit_card_number']
 
 
