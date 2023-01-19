@@ -17,7 +17,7 @@ def cleaning_and_arranging_df(df):
     df = df.explode("order_content")
 
     # spliting from the last -, turn it into a list
-    df["order_content"] = df["order_content"].str.rsplit("-", 1)
+    df["order_content"] = df["order_content"].str.rsplit(pat='-', n=1)
 
     # putting the two list items into two newly created columns
     df[["item", "price"]] = pd.DataFrame(df.order_content.tolist(), index=df.index)
