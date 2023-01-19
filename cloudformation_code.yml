@@ -16,11 +16,11 @@ Resources:
       FunctionName: cfc4testlambda
       Code:
         S3Bucket: cf-g4-test-bucket
-        S3Key: group4-code.zip
+        S3Key: group4-latest.zip
       Handler: lambda_function.lambda_handler
       Runtime: python3.9
       MemorySize: 128
-      Timeout: 4
+      Timeout: 20
       Role: arn:aws:iam::948243690849:role/lambda-execution-role
       VpcConfig:
         SecurityGroupIds:
